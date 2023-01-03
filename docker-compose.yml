@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  react-frontend:
+      tty: true
+      stdin_open: true # docker run -i
+      image: node:18.12
+      container_name: nodeScrapper
+      volumes: 
+        - ./:/home/node_webScrapper
+      ports:
+        - 80:80
+        - 3000:3000
+        - 443:443
+        - 8080:8080
+      working_dir: /home/node_webScrapper
